@@ -20,12 +20,17 @@ subfolder carrying its own toolbox, labs and resources.
 ```
 .
 ├─ cybersecurity-and-it/        Branch — Cyber Security & IT
-│  └─ pentesting/               Course — Penetration Testing (CY-01)
-│     ├─ Dockerfile             Attacker-toolbox image
-│     ├─ docker-compose.yml
-│     ├─ guides/                Lab walkthroughs
-│     ├─ cheatsheets/           Windows/AD quick reference
-│     └─ labs/                  Range setup
+│  ├─ pentesting/               Course — Penetration Testing (CY-01)
+│  │  ├─ Dockerfile             Attacker-toolbox image
+│  │  ├─ docker-compose.yml
+│  │  ├─ guides/                Lab walkthroughs
+│  │  ├─ cheatsheets/           Windows/AD quick reference
+│  │  └─ labs/                  Range setup
+│  └─ exploit-development/      Course — Exploit Development (CY-04)
+│     ├─ chNN-slug/             Per-chapter code + Makefile (make test)
+│     ├─ common/                Shared harness helpers
+│     ├─ lab/                   Pinned Ubuntu 24.04 toolchain image
+│     └─ scripts/               lab.sh, doctor.sh, build-all.sh, test-all.sh
 └─ .github/workflows/           CI — build and publish toolbox images to GHCR
 ```
 
@@ -35,20 +40,22 @@ New branches and courses are added as sibling folders as they come online.
 
 | Branch | Folder | Courses |
 | --- | --- | --- |
-| Cyber Security & IT | [`cybersecurity-and-it/`](cybersecurity-and-it/) | Penetration Testing — [`pentesting/`](cybersecurity-and-it/pentesting/) |
+| Cyber Security & IT | [`cybersecurity-and-it/`](cybersecurity-and-it/) | Penetration Testing — [`pentesting/`](cybersecurity-and-it/pentesting/) · Exploit Development — [`exploit-development/`](cybersecurity-and-it/exploit-development/) |
 
 ## Toolbox images
 
 Each course's toolbox is built and published to the GitHub Container Registry by
-CI on every change. For Penetration Testing:
+CI on every change:
 
 ```bash
 docker pull ghcr.io/kazamadono/uca-pentesting-toolbox:latest
+docker pull ghcr.io/kazamadono/uca-exploit-development-toolbox:latest
 ```
 
-The [course README](cybersecurity-and-it/pentesting/) lists the full toolset and
-usage. (New GHCR packages are private by default — make it public, or keep it
-private and authenticate, from the repository's Packages settings.)
+Each course README ([Penetration Testing](cybersecurity-and-it/pentesting/),
+[Exploit Development](cybersecurity-and-it/exploit-development/)) lists the full
+toolset and usage. (New GHCR packages are private by default — make them public,
+or keep them private and authenticate, from the repository's Packages settings.)
 
 ## Authorised, educational use only
 
