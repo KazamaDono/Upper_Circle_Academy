@@ -2,7 +2,7 @@
 
 Companion infrastructure for the UC Academy Accelerated Programs (UCAP) — the
 hands-on labs, toolboxes and field guides that pair with the courses on Upper
-Circle (<https://connectedummah.lovable.app/academy>).
+Circle (<https://uppercircle.online/academy>).
 
 The repository mirrors the Academy's structure on the site: each **branch**
 (field of study) is a top-level folder, and each **course** within it is a
