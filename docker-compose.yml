@@ -1,0 +1,10 @@
+services:
+  toolbox:
+    image: ghcr.io/kazamadono/uca-toolbox:latest
+    build: .
+    stdin_open: true
+    tty: true
+    # host networking so the container can reach your isolated lab range.
+    network_mode: host
+    volumes:
+      - ./loot:/work/loot
